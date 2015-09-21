@@ -46,7 +46,7 @@ namespace BoxingWeights
                 result = "Heavyweight";
             Console.WriteLine(result);
             return result;
-
+            
         }
 	}
 }

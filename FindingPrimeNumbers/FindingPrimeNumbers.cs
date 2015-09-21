@@ -15,7 +15,7 @@ namespace FindingPrimeNumbers
             sum = 2;
             int count = 1;
             long temp = 0;
-            for (int i = 3;count<n ; i++)
+            for (int i = 3;count < n ; i++)
             {
                 if ((temp = isPrime(i)) != -1)
                 {

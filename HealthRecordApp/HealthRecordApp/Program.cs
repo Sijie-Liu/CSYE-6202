@@ -9,6 +9,7 @@ namespace HealthRecordApp
 
 		static void Main(string[] args)
 		{
+            
             //ask to input firstname
             Console.Write("Please enter patient's first name:");
             string firstname = Console.ReadLine();

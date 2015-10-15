@@ -49,51 +49,19 @@ namespace HealthRecordApp
 
 		public static bool ValidateDateOfBirth(string enteredDOB, ref DateTime patientDOB)
 		{
-            string[] strArr = enteredDOB.Split('/');
-            if (strArr.Length != 3)
-                return false;
-            int month = Int32.Parse(strArr[0]);
-            int day = Int32.Parse(strArr[1]);
-            int year = Int32.Parse(strArr[2]);
-            if (month > 12 || month < 1)
-                return false;
-            if (year <= 0)
-                return false;
-            if (day <= 0)
-                return false;
-
-            switch(month)
-            {
-                case 1:
-                case 3:
-                case 5:
-                case 7:
-                case 8:
-                case 10:
-                case 12:
-                    {
-                        if (day > 31) return false;
-                        break;
-                    }
-                case 2:
-                    {
-                        if (year % 4 == 0)
-                        { if (day > 29) return false; break; }
-                        else
-                        {
-                            if (day > 28) return false; break;
-                        }
-                    }
-                default: {
-                        if (day > 30) return false; break;
-                    }
+            DateTime tmp;
+            try {
+                tmp = DateTime.Parse(enteredDOB);
             }
-            DateTime tmp = new DateTime(year,month,day);
+            catch (Exception e)
+            {
+                return false;
+            }
+
             if (tmp.CompareTo(DateTime.Today) > 0)
                 return false;
 
-            patientDOB = new DateTime(year,month,day);
-            
+            patientDOB = tmp;
 			return true;
 		}
 

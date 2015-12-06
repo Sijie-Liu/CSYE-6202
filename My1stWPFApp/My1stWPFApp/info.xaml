@@ -1,0 +1,42 @@
+﻿<Window x:Class="My1stWPFApp.info"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:My1stWPFApp"
+        mc:Ignorable="d"
+        Title="info" Height="632.773" Width="664.706">
+    <Grid Height="602" VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="label" Content="Student ID" HorizontalAlignment="Left" Height="29" Margin="60,67,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label1" Content="First Name" HorizontalAlignment="Left" Height="30" Margin="60,116,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label2" Content="Last Name" HorizontalAlignment="Left" Height="31" Margin="60,167,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label3" Content="Department" HorizontalAlignment="Left" Height="30" Margin="60,220,0,0" VerticalAlignment="Top" Width="75"/>
+        <TextBox x:Name="studentID" HorizontalAlignment="Left" Height="29" Margin="151,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
+        <TextBox x:Name="firstname" HorizontalAlignment="Left" Height="23" Margin="151,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
+        <TextBox x:Name="lastname" HorizontalAlignment="Left" Height="31" Margin="151,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
+        <ComboBox x:Name="department" HorizontalAlignment="Left" Height="23" Margin="151,220,0,0" VerticalAlignment="Top" Width="107" SelectionChanged="department_SelectionChanged"/>
+        <Button x:Name="button" Content="New Student" HorizontalAlignment="Left" Height="50" Margin="477,74,0,0" VerticalAlignment="Top" Width="139"/>
+        <RadioButton x:Name="radioButton" Content="Full Time" HorizontalAlignment="Left" Margin="331,103,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="radioButton1" Content="Part Time" HorizontalAlignment="Left" Margin="329,146,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.137,0.437"/>
+        <Button x:Name="button1" Content="Remove Student" HorizontalAlignment="Left" Height="52" Margin="477,146,0,0" VerticalAlignment="Top" Width="139"/>
+        <Button x:Name="button2" Content="Edit Student" HorizontalAlignment="Left" Height="30" Margin="477,220,0,0" VerticalAlignment="Top" Width="139"/>
+        <Label x:Name="label4" Content="Enrollment Type" HorizontalAlignment="Left" Margin="293,67,0,0" VerticalAlignment="Top" Width="141"/>
+        <ListView x:Name="table" HorizontalAlignment="Left" Height="281" Margin="23,270,0,0" VerticalAlignment="Top" Width="593" SelectionChanged="listView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Student ID" Width="80" DisplayMemberBinding="{Binding Path=StudentID}"/>
+                    <GridViewColumn Header="First Name" Width="100" DisplayMemberBinding="{Binding Path=FirstName}"/>
+                    <GridViewColumn Header="Last Name" Width="100" DisplayMemberBinding="{Binding Path=LastName}"/>
+                    <GridViewColumn Header="Department" Width="100" DisplayMemberBinding="{Binding Path=Department}"/>
+                    <GridViewColumn Header="Enrollment Type" Width="100" DisplayMemberBinding="{Binding Path=EnrollType}"/>
+                </GridView>
+            </ListView.View>
+            
+        </ListView>
+
+    </Grid>
+</Window>

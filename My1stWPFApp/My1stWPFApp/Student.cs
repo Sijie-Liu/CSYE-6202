@@ -8,6 +8,7 @@ namespace My1stWPFApp
 {
     class Student
     {
+        
         public string StudentID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -22,5 +23,18 @@ namespace My1stWPFApp
             Department = d;
             EnrollType = e;
         }
+
+        /*
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public int Age { get; set; }
+
+        public Student(int i, string n, int a)
+        {
+            this.Id = i;
+            this.Name = n;
+            this.Age = a;
+        }
+        */
     }
 }

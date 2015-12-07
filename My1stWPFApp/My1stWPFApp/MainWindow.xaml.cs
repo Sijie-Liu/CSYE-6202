@@ -38,5 +38,11 @@ namespace My1stWPFApp
                 MessageBox.Show("Sign in failed!");
             }
         }
+
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            ListBox lb = new ListBox();
+            lb.Show();
+        }
     }
 }

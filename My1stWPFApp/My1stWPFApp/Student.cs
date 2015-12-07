@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace My1stWPFApp
 {
-    class Student
+    public class Student
     {
         
         public string StudentID { get; set; }

@@ -20,12 +20,12 @@ namespace My1stWPFApp
     /// </summary>
     public partial class info : Window
     {
-        ObservableCollection<Student> list = new ObservableCollection<Student>();
+        ObservableCollection<Student> list = Helper.Randomizer();
         Dictionary<string,int> departments = new Dictionary<string, int>();
         public info()
         {
             InitializeComponent();
-            list.Add(new Student("123", "Jay", "liu", "Information Systems", "Full Time"));
+            
             freshTable();
             departments["Information Systems"] = 0;
             departments["International Affairs"] = 1;
@@ -123,6 +123,28 @@ namespace My1stWPFApp
             {
                 this.radioPartTime.IsChecked = true;
             }
+        }
+    }
+
+
+    public class Helper
+    {
+        public static string[] firstname = { "Bart", "Maggie", "Lisa", "Homer", "Otto", "Dr.Marvin", "Radioactive" };
+        public static string[] lastname = { "Simpson", "Mann", "Monroe", "Liu", "Louis", "Zhang", "Pan" };
+        public static string[] department = { "Information Systems", "International Affairs", "Nursing", "Pharmacy", "Professional Studies", "Psychology", "Public Administration" };
+        public static string[] enrollmentType = { "Full Time", "Part Time" };
+        public static ObservableCollection<Student> Randomizer()
+        {
+            Random ran = new Random();
+            ObservableCollection<Student> result = new ObservableCollection<Student>();
+            for (int i = 0; i < 10; i++)
+            {
+                Student s = new Student(ran.Next(100, 999).ToString() + "-" + ran.Next(10, 99).ToString() + "-" + ran.Next(1000, 9999).ToString(), firstname[ran.Next(0, 6)], lastname[ran.Next(0, 6)], department[ran.Next(0, 6)], enrollmentType[ran.Next(0, 1)]);
+                
+
+                result.Add(s);
+            }
+            return result;
         }
     }
 }
